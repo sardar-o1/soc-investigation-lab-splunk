@@ -22,7 +22,7 @@ To focus on fundamental SOC investigation techniques, this project utilizes a si
 
 ## Attack Scenario
 
-The attacker successfully gained access to the Windows host through Remote Desktop Protocol (RDP), performed basic host discovery, downloaded a batch file from an attacker-controlled HTTP server using PowerShell, and executed the downloaded file.
+A simulated attacker attempted to gain access to a Windows 10 host through an RDP brute-force attack. Following successful authentication, the attacker performed basic host discovery activities, used PowerShell to download a batch file from an attacker-controlled HTTP server, and executed the downloaded file on the victim system.
 
 ## Key Detections
 
