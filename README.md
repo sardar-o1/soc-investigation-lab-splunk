@@ -2,16 +2,48 @@
 
 ## Overview
 
-SOC-Investigation-Lab is a hands-on cybersecurity project that simulates basic real-world attack scenarios in a controlled environment. The lab demonstrates how adversary techniques generate security telemetry across Windows Security Logs and Sysmon, and how Splunk SIEM is used to build detections, generate alerts, and investigate incidents end-to-end.
+This project demonstrates a host-based Security Operations Center (SOC) investigation conducted using Splunk within a controlled VirtualBox lab environment.
 
-## Objectives
+The objective of this project was to simulate a realistic attack chain, collect endpoint telemetry, develop detections, investigate attacker activity, and document findings through a structured incident response workflow.
 
-- Simulate real-world attack techniques in a controlled lab environment
-- Generate Windows Security and Sysmon telemetry
-- Build Splunk detection queries (SPL)
-- Create alerting logic for SOC use cases
-- Investigate security incidents end-to-end
-- Map detections to MITRE ATT&CK techniques
+The attack was performed in an isolated lab environment using Kali Linux as the attacker machine and Windows 10 as the victim machine.
+
+To focus on fundamental SOC investigation techniques, this project utilizes a simple attack chain consisting of RDP brute-force attempts, successful authentication, host discovery, PowerShell-based file download activity, and execution of a downloaded batch file.
+
+## Lab Environment
+
+| Component | Role |
+| :--- | :--- |
+| **Kali Linux** | Attack | 
+| **Windows 10** | Victim | 
+| **Sysmon** | Endpoint Telemetry |
+| **Ubuntu Server** | Splunk Enterprise (SIEM) |  
 
 
+## Attack Scenario
 
+The attacker successfully gained access to the Windows host through Remote Desktop Protocol (RDP), performed basic host discovery, downloaded a batch file from an attacker-controlled HTTP server using PowerShell, and executed the downloaded file.
+
+## Key Detections
+
+- RDP Brute Force Activity (Windows Security Event ID 4625)
+- Successful RDP Authentication (Windows Security Event ID 4624)
+- Discovery Command Execution (Sysmon Event ID 1)
+- PowerShell Invoke-WebRequest Activity (PowerShell Event ID 4104)
+- Payload File Creation - payload.bat (Sysmon Event ID 11)
+- PowerShell Execution of Downloaded Payload (Sysmon Event ID 1)
+
+## MITRE ATT&CK Mapping
+
+| Attack Stage | Technique | ATT&CK ID |
+| :--- | :--- | :--- |
+| RDP Brute Force	| Brute Force |	T1110 |
+| Successful RDP Login	| Remote Services: Remote Desktop Protocol	| T1021.001 | 
+| Host Discovery	| System Information Discovery	| T1082 | 
+| PowerShell Execution	| Command and Scripting Interpreter: PowerShell	| T1059.001 | 
+| File Download via Invoke-WebRequest	| Ingress Tool Transfer	| T1105 | 
+| Batch File Execution	| User Execution	| T1204 |
+
+## Learning Outcomes
+
+Coming Soon... This project is currently under development.
