@@ -22,28 +22,27 @@ To focus on fundamental SOC investigation techniques, this project utilizes a si
 
 ## Attack Scenario
 
-A simulated attacker attempted to gain access to a Windows 10 host through an RDP brute-force attack. Following successful authentication, the attacker performed basic host discovery activities, used PowerShell to download a batch file from an attacker-controlled HTTP server, and executed the downloaded file on the victim system.
+A simulated attacker attempted to gain access to a Windows 10 host through an RDP brute-force attack against a valid user account. Following successful authentication, the attacker performed basic host discovery activities, accessed an attacker-controlled HTTP server, downloaded a batch file to the victim system, and executed the downloaded file, resulting in the creation of a command prompt (cmd.exe) process.
 
 ## Key Detections
 
 - RDP Brute Force Activity (Windows Security Event ID 4625)
 - Successful RDP Authentication (Windows Security Event ID 4624)
 - Discovery Command Execution (Sysmon Event ID 1)
-- PowerShell Invoke-WebRequest Activity (PowerShell Event ID 4104)
+- Outbound Connection to Attacker HTTP Server (Sysmon Event ID 3)
 - Payload File Creation - payload.bat (Sysmon Event ID 11)
-- PowerShell Execution of Downloaded Payload (Sysmon Event ID 1)
+- Payload Execution (Sysmon Event ID 1)
+- PowerShell Process Creation (Sysmon Event ID 1)
 
-## MITRE ATT&CK Mapping
-
-| Attack Stage | Technique | ATT&CK ID |
-| :--- | :--- | :--- |
-| RDP Brute Force	| Brute Force |	T1110 |
-| Successful RDP Login	| Remote Services: Remote Desktop Protocol	| T1021.001 | 
-| Host Discovery	| System Information Discovery	| T1082 | 
-| PowerShell Execution	| Command and Scripting Interpreter: PowerShell	| T1059.001 | 
-| File Download via Invoke-WebRequest	| Ingress Tool Transfer	| T1105 | 
-| Batch File Execution	| User Execution	| T1204 |
 
 ## Learning Outcomes
 
-Coming Soon... This project is currently under development.
+Through this project, I gained practical experience in:
+
+- Security monitoring and investigation using Splunk Enterprise.
+- Analyzing Windows Security Logs and Sysmon telemetry.
+- Detecting brute-force attacks, unauthorized access, and suspicious process activity.
+- Building SPL-based detections for multiple stages of an attack chain.
+- Correlating events to create an attack timeline and identify attacker actions.
+- Mapping adversary behavior to the MITRE ATT&CK framework.
+- Documenting findings and remediation recommendations in a structured incident report.
