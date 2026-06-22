@@ -12,6 +12,10 @@
 
 **Trigger Condition:** More than 10 failed logon attempts from the same source IP.
 
+### Alert Screenshot
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/55d618bf5470b99bc23a750c44844870866e3474/Screenshots/alert1.png)
+
+
 ## Alert 2: Successful Login Following Brute Force
 
 **Purpose:** Detect successful authentication after repeated failed logon attempts.
@@ -23,3 +27,8 @@
 **Severity:** High
 
 **Trigger Condition:** More than 10 failed logon attempts followed by at least one successful login from the same source IP.
+
+### Alert Screenshot
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/55d618bf5470b99bc23a750c44844870866e3474/Screenshots/alert2.png)
+
+
