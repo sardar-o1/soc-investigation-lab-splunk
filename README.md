@@ -32,7 +32,14 @@ A simulated attacker attempted to gain access to a Windows 10 host through an RD
 - Outbound Connection to Attacker HTTP Server (Sysmon Event ID 3)
 - Payload File Creation - payload.bat (Sysmon Event ID 11)
 - Payload Execution (Sysmon Event ID 1)
-- PowerShell Process Creation (Sysmon Event ID 1)
+
+## MITRE ATT&CK Mapping
+
+All detections were mapped to MITRE ATT&CK techniques: [Mitre-Mapping]( 03-Investigation/mitre-mapping.md )
+
+## Final Incident Report
+
+The complete investigation write‑up is available here: [Final-Investigation-Report]( 04-Incident-Report/Final-Investigation-Report.md)
 
 
 ## Learning Outcomes
