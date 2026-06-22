@@ -47,3 +47,11 @@ index=windows10 source=Sysmon EventCode=11
 
 The investigation identified a PowerShell HTTP connection to 192.168.31.63:80 and the creation of payload.bat on the victim host. These correlated events confirm successful payload delivery to the victim system.
 
+## Screenshots
+
+####  HTTP Connection Detection
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/37a7e1a551437be18797b9bdeaa40a8e8e9dfe34/Screenshots/splunk_query5.png)
+
+#### Payload Download Detection
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/37a7e1a551437be18797b9bdeaa40a8e8e9dfe34/Screenshots/splunk_query4.png)
+
