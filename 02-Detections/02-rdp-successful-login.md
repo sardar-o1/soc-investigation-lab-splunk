@@ -18,3 +18,6 @@ index=windows10 EventCode=4624 Logon_Type=10
 ## Detection Result
 
 The query identified a successful RDP login from source IP 192.168.31.63 using the account admin11. The successful authentication occurred after multiple failed logon attempts, indicating a successful brute-force attack.
+
+## Screenshot
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/37a7e1a551437be18797b9bdeaa40a8e8e9dfe34/Screenshots/splunk_query2.png)
