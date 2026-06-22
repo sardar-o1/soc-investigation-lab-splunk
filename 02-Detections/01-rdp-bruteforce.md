@@ -10,6 +10,7 @@ index=windows10 eventcode=4625
 | where count > 10
 | search account_name!="-"
 ```
+
 ## Detection Methodology
 - Monitor Windows Security Event ID 4625 (Failed Logon).
 - Aggregate failed authentication attempts by account name and source IP address.
@@ -20,3 +21,6 @@ index=windows10 eventcode=4625
 ## Detection Result
 
 The query identified 37 failed logon attempts against the account admin11 from the source IP address 192.168.31.63. The failure reason was "Unknown user name or bad password", indicating a likely password-guessing or brute-force attack against the RDP service.
+
+## Screenshot
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/37a7e1a551437be18797b9bdeaa40a8e8e9dfe34/Screenshots/splunk_query1.png)
