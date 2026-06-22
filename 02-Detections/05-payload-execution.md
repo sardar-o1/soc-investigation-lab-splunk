@@ -23,3 +23,7 @@ index=windows10 source=Sysmon EventCode=1
 ## Detection Result
 
 The investigation identified PowerShell executing the downloaded file payload.bat, which subsequently launched cmd.exe. This activity confirms successful payload execution on the victim host.
+
+## Screenshot
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/37a7e1a551437be18797b9bdeaa40a8e8e9dfe34/Screenshots/splunk_query6.png)
+
