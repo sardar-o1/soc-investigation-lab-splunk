@@ -28,3 +28,8 @@ The query identified the execution of multiple discovery commands by WINDOWS-VM\
 
 These commands were executed shortly after the successful RDP login and are consistent with attacker reconnaissance activity performed to gather information about the compromised host.
 
+## Screenshot
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/37a7e1a551437be18797b9bdeaa40a8e8e9dfe34/Screenshots/splunk_query3.png)
+
+
+
