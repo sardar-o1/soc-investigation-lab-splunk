@@ -19,6 +19,8 @@ To focus on fundamental SOC investigation techniques, this project utilizes a si
 | **Sysmon** | Endpoint Telemetry |
 | **Ubuntu Server** | Splunk Enterprise (SIEM) |  
 
+For detailed setup instructions, architecture diagrams, Sysmon configuration, and Splunk onboarding, refer to the SOC Home Lab project: https://github.com/sardar-o1/SOC-Home-Lab-Setup.git
+
 
 ## Attack Scenario
 
@@ -35,11 +37,13 @@ A simulated attacker attempted to gain access to a Windows 10 host through an RD
 
 ## MITRE ATT&CK Mapping
 
-All detections were mapped to MITRE ATT&CK techniques: [Mitre-Mapping]( 03-Investigation/mitre-mapping.md )
+All observed attacker activities were mapped to the MITRE ATT&CK framework.
+ 
+- MITRE ATT&CK Mapping: [mitre-mapping]( 03-Investigation/mitre-mapping.md )
 
 ## Final Incident Report
 
-The complete investigation write‑up is available here: [Final-Investigation-Report]( 04-Incident-Report/Final-Investigation-Report.md)
+The complete investigation report is available here: [Final-Investigation-Report]( 04-Incident-Report/Final-Investigation-Report.md)
 
 
 ## Learning Outcomes
